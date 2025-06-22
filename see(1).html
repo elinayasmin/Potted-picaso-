@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Plants</title>
+  <link rel="stylesheet" href="style(see(1)).css" />
+</head>
+<body>
+  <h1 class="heading">Your baby plants!!!</h1>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Plant Name</th>
+          <th>Status</th>
+          <th>See Your Plant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Leafy</td>
+          <td>30%</td>
+          <td><button onclick="seePlant(1)">See</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Cactus Queen</td>
+          <td>10%</td>
+          <td><button onclick="seePlant(2)">See</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hanging Harry</td>
+          <td>60%</td>
+          <td><button onclick="seePlant(3)">See</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function seePlant(id) {
+      // Example logic—you can adjust to open specific plant pages
+      alert(`Viewing plant #${id} 🌿`);
+      // Or redirect: window.location.href = `plant${id}.html`;
+    }
+    const tableBody = document.querySelector("tbody");
+const plants = JSON.parse(localStorage.getItem("myPlants")) || [];
+
+plants.forEach((plant, index) => {
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${plant.name}</td>
+    <td>${plant.status}%</td>
+    <td><button onclick="seePlant(${index})">See</button></td>
+  `;
+
+  tableBody.appendChild(row);
+});
+
+  </script>
+</body>
+</html>

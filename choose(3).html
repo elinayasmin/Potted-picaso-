@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Plant</title>
+  <link rel="stylesheet" href="style(choose(3)).css" />
+</head>
+<body>
+  <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+
+  <div class="container">
+    <div class="content">
+     <div class="plant-container">
+    <img id="plant-image" src="" alt="Chosen Plant" />
+  </div>
+      <h2 id="plant-name">Your Plant</h2>
+
+      <div class="actions">
+        <button onclick="waterPlant()">Water</button>
+        <button onclick="petPlant()">Pet the plant </button>
+      </div>
+    </div>
+
+    <div class="status-bar-wrapper">
+      <div class="status-bar-bg">
+        <div id="status-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="choose(3).js"></script>
+</body>
+</html>
